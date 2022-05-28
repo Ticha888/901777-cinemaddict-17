@@ -5,7 +5,7 @@ import {getRuntime} from '../util.js';
 
 
 const createPopup = (movie,comments) => {
-  const {film_info} = movie;
+  const {filmInfo} = movie;
   return  `<section class="film-details">
   <form class="film-details__inner" action="" method="get">
   <div class="film-details__top-container">
@@ -14,57 +14,57 @@ const createPopup = (movie,comments) => {
     </div>
     <div class="film-details__info-wrap">
       <div class="film-details__poster">
-        <img class="film-details__poster-img" src="${film_info.poster}" alt="">
+        <img class="film-details__poster-img" src="${filmInfo.poster}" alt="">
 
-        <p class="film-details__age">${film_info.age_rating}</p>
+        <p class="film-details__age">${filmInfo.ageRating}</p>
       </div>
 
       <div class="film-details__info">
         <div class="film-details__info-head">
           <div class="film-details__title-wrap">
-            <h3 class="film-details__title">${film_info.title}</h3>
-            <p class="film-details__title-original">${film_info.alternative_title}</p>
+            <h3 class="film-details__title">${filmInfo.title}</h3>
+            <p class="film-details__title-original">${filmInfo.alternativeTitle}</p>
           </div>
 
           <div class="film-details__rating">
-            <p class="film-details__total-rating">${film_info.total_rating}</p>
+            <p class="film-details__total-rating">${filmInfo.totalRating}</p>
           </div>
         </div>
 
         <table class="film-details__table">
           <tr class="film-details__row">
             <td class="film-details__term">Director</td>
-            <td class="film-details__cell">${film_info.director}</td>
+            <td class="film-details__cell">${filmInfo.director}</td>
           </tr>
           <tr class="film-details__row">
             <td class="film-details__term">Writers</td>
-            <td class="film-details__cell">${film_info.writers}</td>
+            <td class="film-details__cell">${filmInfo.writers}</td>
           </tr>
           <tr class="film-details__row">
             <td class="film-details__term">Actors</td>
-            <td class="film-details__cell">${film_info.actors}</td>
+            <td class="film-details__cell">${filmInfo.actors}</td>
           </tr>
           <tr class="film-details__row">
             <td class="film-details__term">Release Date</td>
-            <td class="film-details__cell">${new Date(film_info.release.date).getDate()} ${new Date(film_info.release.date).toLocaleString('en-GB', { month: 'long' })} ${new Date(film_info.release.date).getFullYear()}</td>
+            <td class="film-details__cell">${new Date(filmInfo.release.date).getDate()} ${new Date(filmInfo.release.date).toLocaleString('en-GB', { month: 'long' })} ${new Date(filmInfo.release.date).getFullYear()}</td>
           </tr>
           <tr class="film-details__row">
             <td class="film-details__term">Runtime</td>
-            <td class="film-details__cell">${getRuntime(film_info.runtime)}</td>
+            <td class="film-details__cell">${getRuntime(filmInfo.runtime)}</td>
           </tr>
           <tr class="film-details__row">
             <td class="film-details__term">Country</td>
-            <td class="film-details__cell">${film_info.release.release_country}</td>
+            <td class="film-details__cell">${filmInfo.release.releaseCountry}</td>
           </tr>
           <tr class="film-details__row">
             <td class="film-details__term">Genres</td>
             <td class="film-details__cell">
-              <span class="film-details__genre">${film_info.genre}</span>
+              <span class="film-details__genre">${filmInfo.genre}</span>
           </tr>
         </table>
 
         <p class="film-details__film-description">
-        ${film_info.description}
+        ${filmInfo.description}
         </p>
       </div>
     </div>

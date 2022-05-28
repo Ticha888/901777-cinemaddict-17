@@ -26,4 +26,3 @@ const filmList = document.querySelector('.films-list');
 render (new NewBtnShowMoreView(), filmList);
 // render (new NewPopupView(),document.body);
 
-

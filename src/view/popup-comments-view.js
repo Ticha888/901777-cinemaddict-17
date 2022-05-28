@@ -1,7 +1,7 @@
 import { createElement } from '../render.js';
 import {getTimeComment} from '../util.js';
 
-const createfilmComment = (filmComment) => {
+const createFilmComment = (filmComment) => {
   const {author,comment,date,emotion} = filmComment;
   return `<li class="film-details__comment">
             <span class="film-details__comment-emoji">
@@ -24,7 +24,7 @@ export default class NewPopupCommentsView {
   }
 
   getTemplate() {
-    return createfilmComment(this.comment);
+    return createFilmComment(this.comment);
   }
 
   getElement() {
