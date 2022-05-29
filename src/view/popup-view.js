@@ -88,7 +88,7 @@ const createPopup = (movie,comments) => {
 </form>
 </section>`;
 };
-export default class NewPopupView {
+export default class PopupView {
   constructor(movie, comment) {
     this.movie = movie;
     this.comment = comment;

@@ -1,9 +1,6 @@
-/* eslint-disable camelcase */
 import { createElement } from '../render.js';
 import {getRuntime} from '../util.js';
-// import {movieModel} from '../presenter/board-presenter.js';
 
-// console.log(movieModel);
 
 const createFilmCard = (movie) => {
   const {filmInfo,comments} = movie;

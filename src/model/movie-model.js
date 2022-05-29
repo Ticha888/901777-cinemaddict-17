@@ -6,12 +6,16 @@ export default class MovieModel {
 
   moviesComments = movieComments;
 
-  getCommentsbyId = (id) => this.moviesComments.filter((comment) => comment.id === id);
+  getCommentsbyId = (id) => this.moviesComments.find((comment) => comment.id === id);
 
-  commentsDetails = this.movies.forEach((movie)=>{
-    movie.comments.map((id)=>this.getCommentsbyId(id));
-  });
-
-
-  getMovies = () => this.movies;
+  getMoviesWithComments = () => {
+    this.movies.forEach((movie)=>{
+      const commentsDetail = movie.comments.map((id)=>this.getCommentsbyId(id));
+      movie.comments = commentsDetail;
+    });
+    return this.movies;
+  };
 }
+
+// const test = new MovieModel();
+// console.log(test.commentsDetails());
