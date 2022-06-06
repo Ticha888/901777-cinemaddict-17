@@ -2,20 +2,18 @@ import {getMovieData} from '../mock/movie-mock.js';
 import {movieComments} from '../mock/movie-mock.js';
 
 export default class MovieModel {
-  movies = Array.from({length: 2}, getMovieData); //здесь указываем количество карточек фильмов и попапов.
+  movies = Array.from({length: 8}, getMovieData); //здесь указываем количество карточек фильмов и попапов.
 
   moviesComments = movieComments;
 
-  getCommentsbyId = (id) => this.moviesComments.find((comment) => comment.id === id);
+  #getCommentsbyId = (id) => this.moviesComments.find((comment) => comment.id === id);
 
-  getMoviesWithComments = () => {
+  get moviesWithComments() {
     this.movies.forEach((movie)=>{
-      const commentsDetail = movie.comments.map((id)=>this.getCommentsbyId(id));
+      const commentsDetail = movie.comments.map((id)=>this.#getCommentsbyId(id));
       movie.comments = commentsDetail;
     });
     return this.movies;
-  };
+  }
 }
 
-// const test = new MovieModel();
-// console.log(test.commentsDetails());

@@ -6,7 +6,6 @@ import NewBtnShowMoreView from './view/btn-show-more-view.js';
 import {render} from './render.js';
 import FilmListPresenter from './presenter/board-presenter.js';
 
-
 const siteMainElement = document.querySelector('.main');
 const headerElement = document.querySelector('header');
 const filmListPresenter = new FilmListPresenter();
@@ -24,5 +23,5 @@ filmListPresenter.init(filmsContainer);
 const filmList = document.querySelector('.films-list');
 
 render (new NewBtnShowMoreView(), filmList);
-// render (new NewPopupView(),document.body);
+// render (new PopupView(),document.body);
 

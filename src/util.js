@@ -19,3 +19,4 @@ export const getRuntime = function (time)  {
 export const getTimeComment = function (time) {
   return `${new Date(time).getFullYear() }/${ new Date(time).getMonth()}/${new Date(time).getDay()} ${new Date(time).getHours()}:${new Date(time).getMinutes()}`;
 };
+
