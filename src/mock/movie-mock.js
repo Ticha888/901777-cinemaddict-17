@@ -6,7 +6,7 @@ const filmDescription = ['Lorem ipsum dolor sit amet, consectetur adipiscing eli
 
 export const getMovieData = () =>  ({
   'id': '0',
-  'comments': ['40','41'],
+  'comments': ['40','41','42'],
   'filmInfo': {
     'title': filmTitles[getRandomNumber(0,4)],
     'alternativeTitle': 'Laziness Who Sold Themselves',
@@ -55,7 +55,7 @@ export const movieComments = [{
 {
   'id': '40',
   'author': 'Zecar',
-  'comment': 'Agroh Ngare dollar',
+  'comment': 'Coool film',
   'date': '2019-05-11T16:12:32.554Z',
   'emotion': 'smile'
 },
