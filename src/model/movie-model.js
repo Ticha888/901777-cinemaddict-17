@@ -2,7 +2,7 @@ import {getMovieData} from '../mock/movie-mock.js';
 import {movieComments} from '../mock/movie-mock.js';
 
 export default class MovieModel {
-  movies = Array.from({length: 8}, getMovieData); //здесь указываем количество карточек фильмов и попапов.
+  movies = Array.from({length: 13}, getMovieData); //здесь указываем количество карточек фильмов и попапов.
 
   moviesComments = movieComments;
 
