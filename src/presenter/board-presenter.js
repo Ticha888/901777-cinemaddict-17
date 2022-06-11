@@ -5,7 +5,7 @@ import PopupView from '../view/popup-view.js';
 import PopupCommentsView from '../view/popup-comments-view.js';
 import PopupNewCommentView from '../view/popup-new-comment-view.js';
 import ButtonShowMoreView from '../view/btn-show-more-view.js';
-import ListEmptyView from '../view/list-empty-view.js'
+import ListEmptyView from '../view/list-empty-view.js';
 
 const MOVIE_COUNT_STEP = 5;
 
@@ -70,6 +70,7 @@ export default class FilmListPresenter {
     });
   };
 
+  // eslint-disable-next-line getter-return
   get loadMoreMovieButton() {
     const filmList = document.querySelector('.films-list');
     if (this.#moviesModelWithComments.length > MOVIE_COUNT_STEP){
@@ -80,7 +81,6 @@ export default class FilmListPresenter {
 
   #handleLoadMoreButtomComponent = (evt) => {
     evt.preventDefault();
-    // this.#moviesModelWithComments.slice(this.#renderedMoviesCardCount, MOVIE_COUNT_STEP + this.#renderedMoviesCardCount).forEach((movie)=>{render (new NewFilmCardView(movie),document.querySelector('.films-list__container'));console.log(movie)});
     const newMovies = this.#moviesModelWithComments.slice(this.#renderedMoviesCardCount, MOVIE_COUNT_STEP + this.#renderedMoviesCardCount);
     newMovies.forEach((movie,i)=>{render (new NewFilmCardView(movie),document.querySelector('.films-list__container')); this.#renderPopup(movie,(i+this.#renderedMoviesCardCount));});
     this.#renderedMoviesCardCount += MOVIE_COUNT_STEP;
